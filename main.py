@@ -1,8 +1,9 @@
-__author__ = 'zhengkening'
+#!/usr/bin/env python
 #coding=utf-8
 
 import urllib2
 import json
+import random
 
 class MapConfig:
     def __init__(self, city, key, map_proxy, input, output, error, thread_num):
@@ -71,7 +72,7 @@ class AMapHelper:     #高德地图Geocoding
 
 if __name__ == '__main__':
     map_config = MapConfig('宁波',                               #City
-                           '702330393e12f1be931fbc275f44cd06',  #Key
+                           '79cb4998af3566585868b629bacd696b',  #Key
                            'amap',                              #type of map proxy
                            'bill_address.txt',                  #input file
                            'lng&lat.txt',                       #output file
@@ -79,3 +80,12 @@ if __name__ == '__main__':
                            5) #thread number
     amap_helper = AMapHelper(map_config)
     amap_helper.geocoding()
+    # address_file = open('address_6w.txt', 'r')
+    # addresses = list(address_file)
+    # random.shuffle(addresses)
+    # result = open('result.txt', 'w')
+    # for i in range(0, 10000, 1):
+    #     result.write(addresses[i])
+    #     print '-- %d records imported. --' % i
+    # result.close()
+    # address_file.close()
